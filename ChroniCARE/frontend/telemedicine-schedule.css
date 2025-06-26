@@ -1,0 +1,315 @@
+/* telemedicine-schedule.css */
+
+#telemedicine-schedule-page {
+    padding: 20px;
+}
+
+.schedule-container {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* New Styles for Layout */
+.scheduling-area {
+    display: flex;
+    justify-content: space-between; /* Ensures space distribution */
+    align-items: flex-start;
+    width: 100%;
+    gap: 20px; /* Adds space between elements */
+}
+
+
+/* Adjust the width to ensure both sections fit */
+.calendar-area {
+    flex: 1;
+    min-width: 35%;
+}
+
+.time-slots-area {
+    padding: 10px; /* Adjust padding */
+    margin-right: 0;
+    flex: 1;
+    min-width: 45%;
+    max-width: 55%;
+    overflow-x: auto; /* Prevents horizontal overflow */
+}
+
+
+
+.calendar-container {
+    width: 100%;
+    margin-bottom: 20px;
+    border: 1px solid #ddd; /* Added border */
+    border-radius: 8px; /* Added border-radius */
+    padding: 15px; /* Added padding */
+}
+
+.selected-datetime {
+    width: 100%;
+    margin-bottom: 20px;
+    border: 1px solid #ddd; /* Added border */
+    border-radius: 8px; /* Added border-radius */
+    padding: 15px; /* Added padding */
+}
+
+.time-slots-container {
+    width: 100%;
+    border: 1px solid #ddd; /* Added border */
+    border-radius: 8px; /* Added border-radius */
+    padding: 15px; /* Added padding */
+    box-sizing: border-box; /* Ensure padding doesn't affect width */
+}
+
+/* Calendar Styles */
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #f0f0f0;
+}
+
+.calendar-header button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2em;
+}
+
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+}
+
+.calendar-day {
+    text-align: center;
+    padding: 8px;
+    border: 1px solid #eee;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.calendar-day:hover {
+    background-color: #f9f9f9;
+}
+
+.calendar-day.selected {
+    background-color: #007bff;
+    color: white;
+}
+
+.time-slots-section {
+    margin-bottom: 15px;
+}
+
+.time-slots-section h4 {
+    margin-bottom: 5px;
+}
+
+/*Styling for the default timeslots*/
+.time-slots {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
+.time-slots button {
+    background-color: #f0f0f0;
+    border: 1px solid #ddd;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 5px;
+    transition: background-color 0.2s ease;
+}
+
+.time-slots button:hover {
+    background-color: #ddd;
+}
+
+.time-slots button.selected {
+    background-color: #007bff;
+    color: white;
+}
+
+.add-timeslot {
+    margin-top: 10px;
+}
+
+.add-timeslot p {
+    margin-bottom: 5px;
+}
+
+/* Style for the time input wrapper */
+.time-input-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+#hourInput,
+#minuteInput {
+    width: 50px;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    text-align: center;
+}
+
+#ampmSelect {
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+#addTimeslotButton {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 10px;
+    transition: background-color 0.2s ease;
+}
+
+#addTimeslotButton:hover {
+    background-color: #0056b3;
+}
+
+/* Save Button Style */
+.save-schedule-button {
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.save-schedule-button:hover {
+    background-color: #218838;
+}
+
+/* Styling for the back button */
+.back-button-container {
+    text-align: center; /* Center the button */
+    margin-top: 20px; /* Add some space above the button */
+}
+
+.back-button {
+    background-color: #007bff; /* Blue background color */
+    color: #fff; /* White text color */
+    border: none; /* Remove the border */
+    padding: 10px 20px; /* Add some padding */
+    border-radius: 5px; /* Round the corners */
+    text-decoration: none; /* Remove underline from the link */
+    font-size: 1em; /* Set the font size */
+    cursor: pointer; /* Change the cursor on hover */
+    transition: background-color 0.2s ease; /* Add a smooth transition */
+}
+
+.back-button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+/* Add styles for the loading message */
+#loading-message {
+    color: #666;
+    font-style: italic;
+    text-align: center;
+    margin: 15px 0;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border-radius: 4px;
+}
+
+/* Styling for saved slots (optional visual distinction) */
+.time-slots button.saved {
+    border: 2px solid #28a745; /* Green border for saved slots */
+    background-color: #e9f7ec; /* Light green background */
+}
+/* Ensure selected style overrides saved background */
+.time-slots button.selected {
+    background-color: #007bff;
+    color: white;
+    border-color: #0056b3; /* Use border color consistent with selected state */
+}
+.time-slots button.saved.selected {
+     border-color: #0056b3; /* Selected border takes precedence */
+}
+
+
+/* Action Buttons Area */
+.action-buttons {
+    margin-top: 25px; /* More space */
+    padding-top: 20px;
+    border-top: 1px solid #eee; /* Separator line */
+    display: flex;
+    justify-content: flex-end; /* Align buttons to the right */
+    gap: 15px; /* Space between buttons */
+}
+
+.action-button {
+    color: #fff;
+    border: none;
+    padding: 12px 18px; /* Slightly larger padding */
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em; /* Ensure readable font size */
+    transition: background-color 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+.action-button:hover {
+     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* Enhance shadow on hover */
+}
+
+
+.save-button {
+    background-color: #28a745; /* Green */
+}
+.save-button:hover {
+    background-color: #218838;
+}
+.save-button:disabled { /* Style for disabled state */
+    background-color: #a5d6a7;
+    cursor: not-allowed;
+    box-shadow: none;
+}
+
+.delete-button {
+    background-color: #dc3545; /* Red */
+}
+.delete-button:hover {
+    background-color: #c82333;
+}
+.delete-button:disabled { /* Style for disabled state */
+     background-color: #f8d7da;
+     cursor: not-allowed;
+     box-shadow: none;
+}
+
+
+/* Calendar day disabled state */
+.calendar-day.disabled {
+    color: #ccc;
+    cursor: not-allowed;
+    background-color: #f9f9f9;
+}
+.calendar-day.disabled:hover {
+    background-color: #f9f9f9; /* Prevent hover effect */
+}
+
+/* Add weekday headers style (optional but good) */
+.calendar-weekday {
+    text-align: center;
+    font-weight: bold;
+    color: #555;
+    padding: 5px 0;
+    font-size: 0.9em;
+}

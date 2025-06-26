@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChroniCARE - Profile</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="profile.css">
+    <link rel="stylesheet" href="header.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<style>
+    /* profile.css */
+
+/* General Styles */
+body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f5f0; /* Soft beige background */
+    color: #333;
+    line-height: 1.6;
+    padding-bottom: 60px;
+}
+
+/* Header Styles */
+header {
+    background-color: #fff;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    margin-bottom: 15px;
+    color: #1a237e; /* Dark blue heading */
+    font-size: 2.5em; /* Larger heading */
+}
+
+main {
+    padding: 20px;
+}
+
+section {
+    margin-bottom: 20px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    color: #1a237e;
+    margin-bottom: 15px;
+}
+
+/* Profile Info Section */
+#profile-info .profile-field {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+#profile-info label {
+    width: 120px; /* Increased label width */
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+#profile-info span {
+    flex-grow: 1;
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+#profile-info input[type="text"],
+#profile-info input[type="number"],
+#profile-info input[type="email"],
+#profile-info select {
+    flex-grow: 1;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+/* Button Styling */
+.button-container{
+   display: flex;
+   gap: 10px;
+   justify-content: center;
+   margin-top: 20px;
+}
+
+.profile-button {
+    background-color: #b2ebf2; /* light teal button */
+    color: #333;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+}
+
+.profile-button:hover {
+    background-color: #81d4fa;  /* light cyan */
+}
+
+/* List Styles - REMOVED */
+
+/* Bottom Navigation Bar (Same as before - include it for completeness) */
+.bottom-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    display: flex;
+    justify-content: space-around;
+    padding: 0.75rem 0;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 100; /* Ensure it stays on top */
+}
+
+.nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #555;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.nav-item i {
+    font-size: 1.5rem;
+    margin-bottom: 0.25rem;
+}
+
+.nav-item span {
+    font-size: 0.75rem;
+}
+
+.nav-item:hover, .nav-item.active {
+    color: #007bff;
+}
+
+.nav-item.active{
+    color: #007bff;
+}
+
+/* Small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) {
+  #profile-info label {
+    width: 100px;
+  }
+
+  header h1 {
+    font-size: 2em; /* Reduce heading size on smaller screens */
+  }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+    #profile-info .profile-field {
+        flex-direction: row; /* Keep labels and values in a row on larger screens */
+    }
+}
+</style>
+<body>
+    <header>
+        <div class="logo">
+            <!--img src="your-logo.png" alt="ChroniCARE Logo"-->  <!-- Replace with your logo -->
+            <h1 style="margin-left: 20px;"> ChroniCARE</h1>
+            <div class="header-menu">
+                <!-- Notification Icon Button -->
+                <a href="notifications.html" id="notification-link" class="notification-button" aria-label="View Notifications">
+                    <i class="fas fa-bell"></i>
+                    <span id="notification-indicator" class="notification-indicator-dot" style="display: none;"></span> <!-- Hidden dot for indicator -->
+                </a>
+
+                <!-- Existing Menu Button -->
+                <button class="menu-button" aria-label="Open Menu">
+                    <i class="fas fa-ellipsis-v"></i> <!-- Three vertical dots -->
+                </button>
+                <div class="menu-dropdown">
+                     <!-- Add links relevant to the specific page (doctor vs patient) -->
+                     
+                
+                     <a href="contact.html">Contact</a>
+                     <a href="about-us.html">About Us</a>
+                     <a href="#" id="logout-button">Logout</a> <!-- Added ID for logout -->
+                     
+                </div>
+            </div>
+        </div>
+    </header>
+    <h1 style="margin-left: 20px;">User Profile</h1>
+
+    <main>
+        <section id="profile-info">
+            <h2>Personal Information</h2>
+
+            <div class="profile-field">
+                <label>Name:</label>
+                <span id="user-name">John Doe</span>
+                <input type="text" id="edit-name" class="edit-input" style="display: none;">
+            </div>
+
+            <div class="profile-field">
+                <label>Email:</label>
+                <span id="user-email">john.doe@example.com</span>
+                <input type="email" id="edit-email" class="edit-input" style="display: none;">
+            </div>
+
+            <div class="profile-field">
+                <label>Age:</label>
+                <span id="user-age">30</span>
+                <input type="number" id="edit-age" class="edit-input" style="display: none;">
+            </div>
+
+    
+
+            <div class="profile-field">
+                <label>Gender:</label>
+                <span id="user-gender">Male</span>
+                <select id="edit-gender" class="edit-input" style="display: none;">
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                    <option value="Other">Other</option>
+                </select>
+            </div>
+
+            <div class="profile-field">
+                <label>Height (cm):</label>
+                <span id="user-height">175</span>
+                <input type="number" id="edit-height" class="edit-input" style="display: none;">
+            </div>
+
+            <div class="profile-field">
+                <label>Weight (kg):</label>
+                <span id="user-weight">70</span>
+                <input type="number" id="edit-weight" class="edit-input" style="display: none;">
+            </div>
+
+            <div class="profile-field">
+                <label>Blood Type:</label>
+                <span id="user-blood-type">O+</span>
+                <select id="edit-blood-type" class="edit-input" style="display: none;">
+                    <option value="O+">O+</option>
+                    <option value="O-">O-</option>
+                    <option value="A+">A+</option>
+                    <option value="A-">A-</option>
+                    <option value="B+">B+</option>
+                    <option value="B-">B-</option>
+                    <option value="AB+">AB+</option>
+                    <option value="AB-">AB-</option>
+                </select>
+            </div>
+
+            <div class="button-container">
+                <button id="edit-profile-btn" class="profile-button">Edit Profile</button>
+                <button id="save-profile-btn" class="profile-button" style="display: none;">Save Changes</button>
+            </div>
+
+        </section>
+
+        <!-- Medical History Section Removed -->
+        <!-- Prescriptions Section Removed -->
+
+    </main>
+
+    <nav class="bottom-nav">
+        <a href="index.html" class="nav-item">
+            <i class="fa-solid fa-house"></i>
+            <span>Home</span>
+        </a>
+        <a href="health-monitor.html" class="nav-item">
+           <i class="fa-solid fa-medkit"></i>
+            <span>Health Monitor</span>
+        </a>
+        <a href="telemedicine.html" class="nav-item">
+            <i class="fa-solid fa-video"></i>
+            <span>Telemedicine</span>
+        </a>
+        <a href="profile.html" class="nav-item active">
+            <i class="fa-solid fa-user"></i>
+            <span>Profile</span>
+        </a>
+    </nav>
+
+    <script src="profile.js"></script>
+    <script src="header.js"></script>
+</body>
+</html>

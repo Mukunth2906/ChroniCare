@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChroniCARE - Your Appointments</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="appointments.css">
+    <link rel="stylesheet" href="header.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <h1 style="margin-left: 20px;"> ChroniCARE - Doctor</h1>
+            <div class="header-menu">
+                <button class="menu-button">
+                    <i class="fas fa-ellipsis-v"></i>
+                </button>
+                <div class="menu-dropdown">
+                    <a href="docprofile.html">My Profile</a>
+                    <a href="contact.html">Contact</a>
+                    <a href="about-us.html">About Us</a>
+                    <a href="#">Logout</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section id="appointments-page">
+            <div class="appointments-container">
+                <div class="appointments-header">
+                    <h2>Your Appointments</h2>
+                    <div class="appointment-filter-buttons">
+                        <button class="filter-button active" data-filter="all">All</button>
+                        <button class="filter-button" data-filter="unread">Unread</button>
+                        <button class="filter-button" data-filter="accepted">Accepted</button>
+                        <button class="filter-button" data-filter="declined">Rejected</button>
+                    </div>
+                </div>
+
+                <div class="appointment-list">
+
+                    <div class="appointment-item pending" data-patient="john_doe">
+                        <div class="appointment-details">
+                            <div class="appointment-info">
+                                <div class="top-line">
+                                    <span class="patient-avatar"><i class="fas fa-user-circle"></i></span>
+                                    <span class="patient-name">@john</span>&nbsp; requested an appointment
+                                    <span class="request-time">2 hours ago &nbsp;&nbsp;</span>
+                                    <span class="new-indicator"></span>
+                                </div>
+                                <div class="appointment-time">
+                                    Appointment Time: 13-March-2025 Thursday 2:00pm
+                                </div>
+                            </div>
+                            <div class="appointment-actions">
+                                <button class="button accept" onclick="acceptAppointment(this)">Accept</button>
+                                <button class="button decline" onclick="declineAppointment(this)">Decline</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="appointment-item pending" data-patient="jane_smith">
+                        <div class="appointment-details">
+                            <div class="appointment-info">
+                                <div class="top-line">
+                                    <span class="patient-avatar"><i class="fas fa-user-circle"></i></span>
+                                    <span class="patient-name">@kabil</span>&nbsp; requested an appointment
+                                    <span class="request-time">3 hours ago &nbsp;&nbsp;</span>
+                                    <span class="new-indicator"></span>
+                                </div>
+                                <div class="appointment-time">
+                                    Appointment Time: 13-March-2025 Thursday 3:00pm
+                                </div>
+                            </div>
+                            <div class="appointment-actions">
+                                <button class="button accept" onclick="acceptAppointment(this)">Accept</button>
+                                <button class="button decline" onclick="declineAppointment(this)">Decline</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="appointment-item pending" data-patient="david_lee">
+                        <div class="appointment-details">
+                            <div class="appointment-info">
+                                <div class="top-line">
+                                    <span class="patient-avatar"><i class="fas fa-user-circle"></i></span>
+                                    <span class="patient-name">@david</span>&nbsp; requested an appointment
+                                    <span class="request-time">1 hour ago &nbsp;&nbsp;</span>
+                                    <span class="new-indicator"></span>
+                                </div>
+                                <div class="appointment-time">
+                                    Appointment Time: 13-March-2025 Thursday 4:00pm
+                                </div>
+                            </div>
+                            <div class="appointment-actions">
+                                <button class="button accept" onclick="acceptAppointment(this)">Accept</button>
+                                <button class="button decline" onclick="declineAppointment(this)">Decline</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="appointment-item pending" data-patient="sarah_jones">
+                        <div class="appointment-details">
+                            <div class="appointment-info">
+                                <div class="top-line">
+                                    <span class="patient-avatar"><i class="fas fa-user-circle"></i></span>
+                                    <span class="patient-name">@sara</span>&nbsp; requested an appointment
+                                    <span class="request-time">5 hours ago &nbsp;&nbsp;</span>
+                                    <span class="new-indicator"></span>
+                                </div>
+                                <div class="appointment-time">
+                                    Appointment Time: 14-March-2025 Friday 10:00am
+                                </div>
+                            </div>
+                            <div class="appointment-actions">
+                                <button class="button accept" onclick="acceptAppointment(this)">Accept</button>
+                                <button class="button decline" onclick="declineAppointment(this)">Decline</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="appointment-item accepted" data-patient="michael_brown">
+                        <div class="appointment-details">
+                            <div class="appointment-info">
+                                <div class="top-line">
+                                    <span class="patient-avatar"><i class="fas fa-user-circle"></i></span>
+                                    <span class="patient-name">@michael</span>&nbsp; requested an appointment
+                                    <span class="request-time">1 day ago &nbsp;&nbsp;</span>
+                                    <span class="appointment-status accepted">Accepted</span>
+                                </div>
+                                <div class="appointment-time">
+                                    Appointment Time: 14-March-2025 Friday 11:00am
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="appointment-item accepted" data-patient="emily_davis">
+                        <div class="appointment-details">
+                            <div class="appointment-info">
+                                <div class="top-line">
+                                    <span class="patient-avatar"><i class="fas fa-user-circle"></i></span>
+                                    <span class="patient-name">@sana</span>&nbsp; requested an appointment
+                                    <span class="request-time">2 days ago &nbsp;&nbsp;</span>
+                                    <span class="appointment-status accepted">Accepted</span>
+                                </div>
+                                <div class="appointment-time">
+                                    Appointment Time: 15-March-2025 Saturday 2:00pm
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="appointment-item declined" data-patient="kevin_wilson">
+                        <div class="appointment-details">
+                            <div class="appointment-info">
+                                <div class="top-line">
+                                    <span class="patient-avatar"><i class="fas fa-user-circle"></i></span>
+                                    <span class="patient-name">@vivek</span>&nbsp; requested an appointment
+                                    <span class="request-time">3 days ago &nbsp;&nbsp;</span>
+                                    <span class="appointment-status declined">Declined</span>
+                                </div>
+                                <div class="appointment-time">
+                                    Appointment Time: 13-March-2025 Saturday 3:00pm
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- More appointment items... -->
+                </div>
+            </div>
+        </section>
+        <div class="back-button-container">
+            <button class="back-button" onclick="goBack()">Back</button>
+        </div>
+    </main>
+
+        <!-- Keep all HTML above this -->
+    <script>
+    // appointments.js - Doctor's view
+
+    // --- Helper Functions ---
+    function getAuthToken() {
+        const token = localStorage.getItem('accessToken');
+        console.log("getAuthToken called for appointments page:", token ? "Token found" : "Token NOT FOUND");
+        return token;
+    }
+
+    function convertTo12Hour(time24) {
+        if (!time24 || !time24.includes(':')) return "Invalid Time";
+        try {
+            const [hours, minutes] = time24.split(':');
+            let hoursInt = parseInt(hours);
+            const ampm = hoursInt >= 12 ? 'PM' : 'AM';
+            hoursInt = hoursInt % 12;
+            hoursInt = hoursInt || 12;
+            return `${hoursInt}:${minutes} ${ampm}`;
+        } catch (e) {
+            console.error("Error converting time:", time24, e);
+            return "Invalid Time";
+        }
+    }
+
+    function formatAppointmentDate(dateStr) {
+         if (!dateStr) return "N/A";
+         try {
+            const dateObj = new Date(dateStr + 'T00:00:00');
+            const day = dateObj.getDate();
+            const month = dateObj.toLocaleString('en-US', { month: 'long' });
+            const year = dateObj.getFullYear();
+            const weekday = dateObj.toLocaleString('en-US', { weekday: 'long' });
+            return `${day}-${month}-${year} ${weekday}`;
+         } catch (e) {
+             console.error("Error formatting date:", dateStr, e);
+             return dateStr;
+         }
+     }
+
+    // Replace the existing formatRelativeTime function with this one
+
+// Replace formatRelativeTime again
+
+function formatRelativeTime(dateTimeStr) {
+    console.log(`--- formatRelativeTime called with input: "${dateTimeStr}" ---`); // DEBUG
+    if (!dateTimeStr) return "";
+    try {
+         // *** FIX: Append 'Z' to assume input is UTC if no timezone specified ***
+         let inputStrToParse = dateTimeStr;
+        if (!dateTimeStr.includes('Z') && !dateTimeStr.includes('+') && !dateTimeStr.includes('-')) {
+             // Simple check: if no Z or offset, assume UTC
+             inputStrToParse += 'Z';
+             console.log(`Appended 'Z' assuming UTC: "${inputStrToParse}"`); // DEBUG
+        }
+        // *** END FIX ***
+        
+        const pastDateObj = new Date(dateTimeStr); // Parse input string
+        const pastMillisUTC = pastDateObj.getTime(); // Get milliseconds since epoch (UTC)
+
+        const nowDateObj = new Date(); // Current local time object
+        const nowMillisUTC = nowDateObj.getTime(); // Current milliseconds since epoch (UTC)
+
+        // *** LOG THE VALUES ***
+        console.log(`Parsed Past Date Obj (Local Repr): ${pastDateObj.toString()}`);
+        console.log(`Past Milliseconds (UTC): ${pastMillisUTC}`);
+        console.log(`Current Date Obj (Local Repr): ${nowDateObj.toString()}`);
+        console.log(`Current Milliseconds (UTC): ${nowMillisUTC}`);
+        // *** END LOG ***
+
+        if (isNaN(pastMillisUTC)) {
+             console.error("Parsed Past Milliseconds is NaN!"); // DEBUG ERROR
+             throw new Error("Invalid date string provided");
+        }
+
+        // Difference in seconds
+        const diffInSeconds = Math.floor((nowMillisUTC - pastMillisUTC) / 1000);
+        console.log(`Calculated Difference (seconds): ${diffInSeconds}`); // DEBUG
+
+        if (diffInSeconds < 0) {
+             console.log("Difference is negative, returning 'just now'."); // DEBUG
+             return "just now";
+        }
+
+        const minutes = Math.floor(diffInSeconds / 60);
+        const hours = Math.floor(minutes / 60);
+        const days = Math.floor(hours / 24);
+
+        // Return relative time string (same logic)
+        let result = "";
+        if (days > 1) result = `${days} days ago`;
+        else if (days === 1) result = `1 day ago`;
+        else if (hours > 1) result = `${hours} hours ago`;
+        else if (hours === 1) result = `1 hour ago`;
+        else if (minutes > 1) result = `${minutes} minutes ago`;
+        else if (minutes === 1) result = `1 minute ago`;
+        else result = "just now";
+
+        console.log(`Formatted result: "${result}"`); // DEBUG
+        console.log(`--- formatRelativeTime finished ---`); // DEBUG
+        return result;
+
+    } catch (e) {
+        console.error("Error formatting relative time:", dateTimeStr, e);
+        return dateTimeStr;
+    }
+}
+
+    // --- DOMContentLoaded Listener ---
+    document.addEventListener('DOMContentLoaded', function() {
+        console.log("Doctor Appointments JS Initializing...");
+
+        // --- DOM Element Selection ---
+        const appointmentListDiv = document.querySelector('.appointment-list');
+        const filterButtons = document.querySelectorAll('.appointment-filter-buttons .filter-button');
+        const backButton = document.querySelector('.back-button'); // Assuming only one back button like this
+        const API_BASE_URL = 'http://127.0.0.1:8000'; // Ensure this is correct
+
+        // --- State ---
+        let currentFilter = 'all'; // Default filter
+
+        // --- Check if essential elements exist ---
+        if (!appointmentListDiv) {
+            console.error("Critical Error: '.appointment-list' container not found. Cannot proceed.");
+            return; // Stop execution if list container is missing
+        }
+        if (filterButtons.length === 0) {
+            console.warn("Warning: No filter buttons found.");
+            // Proceed without filter functionality if needed, or log error
+        }
+
+
+        // --- Core Functions ---
+
+        async function fetchAppointmentRequests(statusFilter = null) {
+            const token = getAuthToken();
+            if (!token) {
+                alert("Authentication error. Please log in again.");
+                window.location.href = 'login.html';
+                return [];
+            }
+
+            let apiUrl = `${API_BASE_URL}/appointments/requests`;
+            let queryParams = new URLSearchParams();
+
+            if (statusFilter && statusFilter !== 'all' && statusFilter !== 'unread') {
+                let backendStatus = statusFilter.toUpperCase(); // CONFIRMED, REJECTED
+                queryParams.set('status', backendStatus);
+            } else if (statusFilter === 'unread') {
+                queryParams.set('status', 'PENDING');
+            }
+            // Note: 'all' sends no status parameter
+
+            const queryString = queryParams.toString();
+            if (queryString) {
+                apiUrl += `?${queryString}`;
+            }
+
+            console.log("Fetching appointments from:", apiUrl);
+
+            try {
+                const response = await fetch(apiUrl, {
+                    method: 'GET',
+                    headers: {
+                        'Accept': 'application/json',
+                        'Authorization': `Bearer ${token}`
+                    }
+                });
+
+                if (!response.ok) {
+                    if (response.status === 401 || response.status === 403) {
+                        localStorage.removeItem('accessToken'); // Clear bad token
+                        alert("Authentication error fetching appointments. Please log in again.");
+                        window.location.href = 'login.html';
+                    } else {
+                         const errorData = await response.json().catch(() => ({}));
+                         throw new Error(errorData.detail || `HTTP error ${response.status}`);
+                    }
+                     return [];
+                }
+                const data = await response.json();
+                 console.log("Fetched appointments data:", data);
+                return Array.isArray(data) ? data : [];
+
+            } catch (error) {
+                console.error("Error fetching appointment requests:", error);
+                appointmentListDiv.innerHTML = `<p style="color:red; padding: 20px;">Error loading appointments: ${error.message}</p>`;
+                return [];
+            }
+        }
+
+                        // Function to create HTML for a single appointment item - DEBUG VERSION
+                // Function to create HTML for a single appointment item - REVISED AGAIN
+                      // DEBUGGING VERSION - Always add dot and buttons
+                // Function to create HTML for a single appointment item - FINAL VERSION
+                function createAppointmentElement(appointment) {
+            console.log("--- createAppointmentElement START ---"); // Keep logs for now
+            console.log("Raw appointment data:", appointment);
+
+            if (!appointment || !appointment.id) { // Keep basic validation
+                console.error("Invalid or missing appointment data:", appointment);
+                const errorDiv = document.createElement('div');
+                errorDiv.textContent = "Error: Invalid appointment data.";
+                errorDiv.style.color = 'red'; return errorDiv;
+            }
+
+            const item = document.createElement('div');
+            item.classList.add('appointment-item');
+            item.dataset.appointmentId = appointment.id;
+
+            // --- Get status safely and normalize ---
+            const rawStatus = appointment.status;
+            const statusValue = (typeof rawStatus === 'string') ? rawStatus.trim().toLowerCase() : 'unknown'; // Trim whitespace and lowercase
+            console.log(`Normalized status value: "${statusValue}"`); // DEBUG normalized value
+
+            // Determine CSS class based on normalized status
+            let statusClass = statusValue; // Default to 'pending', 'confirmed', etc.
+            if (statusValue === 'confirmed') statusClass = 'accepted';
+            if (statusValue === 'rejected') statusClass = 'declined';
+            item.classList.add(statusClass);
+            console.log("Applied status class:", statusClass);
+
+            // Prepare display data
+            const patientName = appointment.patient?.username || 'Unknown Patient';
+            const requestTimeRelative = formatRelativeTime(appointment.created_at);
+            const startTimeFormatted = appointment.start_time ? convertTo12Hour(appointment.start_time) : 'N/A';
+            const appointmentDateTime = `${formatAppointmentDate(appointment.appointment_date)} ${startTimeFormatted}`;
+
+            // --- Conditional Logic using NORMALIZED status ---
+            let statusDisplayHTML = '';
+            let actionButtonsHTML = '';
+            let newIndicatorHTML = '';
+
+            // *** COMPARE using the normalized 'statusValue' ***
+            if (statusValue === 'pending') {
+                console.log("Condition MET: statusValue is 'pending'. Adding dot and button placeholders."); // DEBUG
+                newIndicatorHTML = '<span class="new-indicator"></span>';
+                // Add placeholder div for buttons; buttons added later
+                actionButtonsHTML = `<div class="appointment-actions"></div>`;
+            } else if (statusValue === 'confirmed') {
+                console.log("Condition MET: statusValue is 'confirmed'. Adding 'Accepted' text."); // DEBUG
+                statusDisplayHTML = `<span class="appointment-status accepted">Accepted</span>`;
+            } else if (statusValue === 'rejected') {
+                console.log("Condition MET: statusValue is 'rejected'. Adding 'Rejected' text."); // DEBUG
+                statusDisplayHTML = `<span class="appointment-status declined">Rejected</span>`;
+            } else {
+                 console.log(`Condition UNMET: statusValue is unexpected ('${statusValue}').`); // DEBUG
+                 statusDisplayHTML = `<span class="appointment-status">${statusValue}</span>`; // Show raw status if unknown
+            }
+            // --- End Conditional Logic ---
+
+
+            // Construct innerHTML (Buttons added later in renderAppointments)
+            item.innerHTML = `
+                <div class="appointment-details">
+                    <div class="appointment-info">
+                        <div class="top-line">
+                            <span class="patient-avatar"><i class="fas fa-user-circle"></i></span>
+                            <span class="patient-name">@${patientName}</span> requested an appointment
+                            <span class="request-time">  </span>
+                            ${statusDisplayHTML}
+                            ${newIndicatorHTML}
+                        </div>
+                        <div class="appointment-time">
+                            Appointment Time: ${appointmentDateTime}
+                        </div>
+                    </div>
+                    ${actionButtonsHTML}
+                </div>`;
+
+            console.log("Generated item HTML structure."); // DEBUG
+
+            // Listeners will be added in renderAppointments for pending items
+            console.log("--- createAppointmentElement END ---");
+            return item;
+        }
+
+                  // Function to render the list of appointments - Ensures buttons/listeners are added
+        function renderAppointments(appointments) {
+            if (!appointmentListDiv) {
+                 console.error("renderAppointments: Cannot find appointment list div."); // Log error
+                 return;
+            }
+            appointmentListDiv.innerHTML = ''; // Clear previous list
+
+            if (!appointments || appointments.length === 0) {
+                appointmentListDiv.innerHTML = '<p style="padding: 20px; text-align: center;">No appointment requests found.</p>';
+                return;
+            }
+
+            console.log(`Rendering ${appointments.length} appointments.`); // DEBUG
+
+            appointments.forEach(appointment => {
+                try {
+
+                     // *** ADD LOG HERE ***
+            console.log(`Rendering appointment ID: ${appointment.id}, Raw created_at from API: "${appointment.created_at}"`);
+            // *** END LOG ***
+
+                    // 1. Create the basic HTML structure for the item using the corrected createAppointmentElement
+                    const appointmentElement = createAppointmentElement(appointment); // This adds the blue dot conditionally now
+
+                    // 2. Append the basic structure to the DOM
+                    appointmentListDiv.appendChild(appointmentElement);
+
+                    // --- 3. ADD BUTTONS/LISTENERS *AFTER* APPENDING (only for PENDING) ---
+                    // Check the original status from the data object
+                    if (appointment.status === 'pending') {
+                        // Find the placeholder div we created inside the element *that's now in the DOM*
+                        const actionsContainer = appointmentElement.querySelector('.appointment-actions');
+
+                        if (actionsContainer) {
+                            console.log(`Status is PENDING for ${appointment.id}. Creating and adding buttons...`); // DEBUG
+
+                            // Create Accept Button
+                            const acceptBtn = document.createElement('button');
+                            acceptBtn.className = 'button accept'; // Apply CSS classes
+                            acceptBtn.textContent = 'Accept';      // Set button text
+                            acceptBtn.ariaLabel = `Accept appointment from ${appointment.patient?.username || 'patient'}`; // Accessibility
+                            // Add listener to call handleAppointmentAction
+                            acceptBtn.addEventListener('click', (e) => {
+                                e.stopPropagation(); // Prevent event bubbling
+                                handleAppointmentAction(appointment.id, 'confirm', appointmentElement);
+                            });
+
+                            // Create Decline Button
+                            const declineBtn = document.createElement('button');
+                            declineBtn.className = 'button decline'; // Apply CSS classes
+                            declineBtn.textContent = 'Decline';     // Set button text
+                            declineBtn.ariaLabel = `Decline appointment from ${appointment.patient?.username || 'patient'}`; // Accessibility
+                             // Add listener to call handleAppointmentAction
+                            declineBtn.addEventListener('click', (e) => {
+                                e.stopPropagation(); // Prevent event bubbling
+                                handleAppointmentAction(appointment.id, 'reject', appointmentElement);
+                            });
+
+                            // Append the created buttons to their container
+                            actionsContainer.appendChild(acceptBtn);
+                            actionsContainer.appendChild(declineBtn);
+                             console.log(`Buttons and listeners added successfully for ${appointment.id}`); // DEBUG
+
+                        } else {
+                             // This error means the placeholder div wasn't found in the HTML generated by createAppointmentElement
+                             console.error(`Could not find '.appointment-actions' container for PENDING appointment ${appointment.id} after appending.`);
+                        }
+                    }
+                     // --- End Button/Listener Addition ---
+
+                } catch(e) {
+                     console.error("Error creating/appending/adding listeners for appointment:", appointment, e);
+                }
+            }); // End forEach loop
+
+            // Apply the current visual filter after all items are rendered
+            filterAppointmentItems(currentFilter);
+            console.log("Finished rendering appointments and applied filter."); // DEBUG
+        }
+
+
+        // --- MODIFIED handleAppointmentAction ---
+                // Function to handle Accept/Decline button clicks - Includes Confirmation
+                async function handleAppointmentAction(appointmentId, action, itemElement) {
+            const token = getAuthToken();
+            if (!token || !itemElement) {
+                 alert("Cannot perform action: Missing token or item reference.");
+                 return;
+            }
+
+            const isConfirm = action === 'confirm';
+            const actionText = isConfirm ? 'Accept' : 'Decline'; // Use Decline for consistency
+
+            // --- CONFIRMATION DIALOG ---
+            const patientNameElement = itemElement.querySelector('.patient-name');
+            // Provide a fallback name if element not found
+            const patientName = patientNameElement ? patientNameElement.textContent : 'this patient';
+            const confirmationMessage = `Are you sure you want to ${actionText.toLowerCase()} the appointment request from ${patientName}?`;
+
+            if (!confirm(confirmationMessage)) {
+                console.log(`Action '${action}' cancelled by user.`); // Log cancellation
+                return; // Stop if doctor clicks Cancel
+            }
+            // --- END CONFIRMATION DIALOG ---
+
+
+            const actionUrl = `${API_BASE_URL}/appointments/requests/${appointmentId}/${action}`;
+            const button = itemElement.querySelector(`.button.${isConfirm ? 'accept' : 'decline'}`);
+            const otherButton = itemElement.querySelector(`.button.${isConfirm ? 'decline' : 'accept'}`);
+
+            // Disable buttons & show visual feedback
+            if (button) button.disabled = true;
+            if (otherButton) otherButton.disabled = true;
+            itemElement.classList.add(isConfirm ? 'accepting' : 'declining');
+
+            console.log(`Performing action '${action}' on appointment ${appointmentId}`);
+
+            try {
+                const response = await fetch(actionUrl, {
+                    method: 'POST',
+                    headers: { 'Authorization': `Bearer ${token}` }
+                });
+
+                const responseData = await response.json().catch(() => ({}));
+
+                if (!response.ok) {
+                     if (response.status === 401 || response.status === 403) localStorage.removeItem('accessToken');
+                    console.error(`Action ${action} failed (${response.status}):`, responseData);
+                    throw new Error(responseData.detail || `Failed to ${action} appointment.`);
+                }
+
+                 console.log(`Action ${action} successful:`, responseData);
+
+                // Update UI on Success
+                itemElement.classList.remove('pending', 'accepting', 'declining');
+                const finalStatusClass = isConfirm ? 'accepted' : 'declined';
+                itemElement.classList.add(finalStatusClass);
+
+                const topLine = itemElement.querySelector('.top-line');
+                const actionsDiv = itemElement.querySelector('.appointment-actions');
+                const newIndicator = itemElement.querySelector('.new-indicator');
+
+                if (actionsDiv) actionsDiv.remove(); // Remove button container
+                if (newIndicator) newIndicator.remove(); // Remove blue dot
+
+                if (topLine && !topLine.querySelector('.appointment-status')) {
+                    const statusSpan = document.createElement('span');
+                    statusSpan.classList.add('appointment-status', finalStatusClass);
+                    statusSpan.textContent = isConfirm ? 'Accepted' : 'Rejected';
+                    topLine.appendChild(statusSpan);
+                }
+
+                 alert(`Appointment ${isConfirm ? 'accepted' : 'rejected'} successfully.`); // Use simple past tense
+
+                 filterAppointmentItems(currentFilter); // Re-apply filter
+
+            } catch (error) {
+                console.error(`Error during ${action} action:`, error);
+                alert(`Failed to ${action} appointment: ${error.message}`);
+                // Re-enable buttons on error
+                if (button) button.disabled = false;
+                if (otherButton) otherButton.disabled = false;
+                 itemElement.classList.remove('accepting', 'declining');
+            }
+        }
+        //--- END MODIFIED handleAppointmentAction ---
+
+
+        // --- MODIFIED filterAppointmentItems ---
+        // Function to visually filter items based on their current CSS classes
+                // Function to visually filter items based on their current CSS classes
+                function filterAppointmentItems(filter) {
+            currentFilter = filter; // Update state
+            console.log("Applying visual filter:", filter); // Debug
+            if (!appointmentListDiv) return; // Check if container exists
+            const allItems = appointmentListDiv.querySelectorAll('.appointment-item');
+
+            allItems.forEach(item => {
+                let showItem = false;
+                // Check classes on the item itself
+                const isPending = item.classList.contains('pending');
+                const isAccepted = item.classList.contains('accepted');
+                const isDeclined = item.classList.contains('declined');
+
+                if (filter === 'all') {
+                    showItem = true;
+                } else if (filter === 'unread') {
+                    // An item is 'unread' if it has the 'pending' class ONLY
+                    // (meaning it hasn't been actioned yet to get 'accepted' or 'declined')
+                     showItem = isPending; // Simpler: If it has 'pending', it's unread/unactioned.
+                                         // The accept/reject functions REMOVE 'pending'.
+                } else if (filter === 'accepted') {
+                     showItem = isAccepted;
+                } else if (filter === 'declined') {
+                     showItem = isDeclined;
+                }
+
+                item.style.display = showItem ? 'block' : 'none'; // Use 'block' as default display
+            });
+        }
+        // --- END MODIFIED filterAppointmentItems ---
+
+        // --- Initial Load & Filter Button Listeners ---
+        if (filterButtons.length > 0 && appointmentListDiv) {
+            filterButtons.forEach(button => {
+                button.addEventListener('click', async function() {
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    this.classList.add('active');
+                    const filterValue = this.dataset.filter;
+
+                    // Update state and fetch/re-render
+                    currentFilter = filterValue;
+                    if(appointmentListDiv) appointmentListDiv.innerHTML = '<p style="padding: 20px; text-align: center;">Loading appointments...</p>';
+                    const appointments = await fetchAppointmentRequests(filterValue); // Fetch filtered data
+                    renderAppointments(appointments); // Render the fetched data
+                });
+            });
+
+            // Initial fetch on page load
+            async function initialLoad() {
+                 console.log("Performing initial appointment load..."); // Debug
+                 if(appointmentListDiv) appointmentListDiv.innerHTML = '<p style="padding: 20px; text-align: center;">Loading appointments...</p>';
+                 // Fetch 'unread' (Pending) by default? Or 'all'? Let's default to 'unread'
+                 currentFilter = 'unread'; // Set default filter state
+                 // Visually activate the 'unread' button if it exists
+                 filterButtons.forEach(btn => {
+                     btn.classList.remove('active');
+                     if (btn.dataset.filter === 'unread') btn.classList.add('active');
+                 });
+                 const initialAppointments = await fetchAppointmentRequests('unread');
+                 renderAppointments(initialAppointments);
+            }
+            initialLoad();
+
+        } else {
+             console.error("Filter buttons not found. Filtering disabled.");
+             // Load all appointments if no filter buttons
+             async function loadAllInitially() {
+                  if(appointmentListDiv) appointmentListDiv.innerHTML = '<p style="padding: 20px; text-align: center;">Loading appointments...</p>';
+                  const appointments = await fetchAppointmentRequests('all');
+                  renderAppointments(appointments);
+             }
+             loadAllInitially();
+        }
+
+
+         // --- Back Button ---
+         function goBack() {
+            window.location.href = 'doctor-dashboard.html';
+         }
+         if(backButton) {
+             backButton.addEventListener('click', goBack);
+         } else {
+              console.warn("Back button element not found.");
+         }
+
+         // --- Header Menu ---
+         // Add header toggle logic here if not in separate header.js
+         const menuButton = document.querySelector('.menu-button');
+         const menuDropdown = document.querySelector('.menu-dropdown');
+         if(menuButton && menuDropdown) {
+              menuButton.addEventListener('click', function (event) {
+                 menuDropdown.classList.toggle('show');
+                 event.stopPropagation(); // Prevent click from closing immediately
+              });
+              // Close dropdown if clicking outside
+              document.addEventListener('click', function (event) {
+                 if (menuDropdown.classList.contains('show') && !menuButton.contains(event.target) && !menuDropdown.contains(event.target)) {
+                     menuDropdown.classList.remove('show');
+                 }
+              });
+         }
+
+
+    }); // End DOMContentLoaded
+    </script>
+      <script src="header.js"></script>
+</body>
+</html>
